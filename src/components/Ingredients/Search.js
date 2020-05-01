@@ -14,8 +14,9 @@ const Search = React.memo(props => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // searchIngredient is the old state value before the function starts
-      if (searchIngredient !== inputRef.current.value) {
+      // searchIngredient is the old state value before the function starts so check the current
+      // is equal to old value
+      if (searchIngredient === inputRef.current.value) {
         const query = searchIngredient.length === 0
           ? ''
           : `?orderBy="title"&equalTo="${searchIngredient}"`;
